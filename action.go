@@ -7,11 +7,10 @@ import (
 	"github.com/libp2p/go-libp2p/core/network"
 	"github.com/libp2p/go-libp2p/core/peer"
 )
-
 type Action struct {
-	XMLName xml.Name
-	Action  string
-	PearID  peer.ID
+ 	XMLName  xml.Name
+ 	InnerXML []byte  `xml:",innerxml"`
+ 	PearID   peer.ID `xml:"Root>Peer"`
 }
 
 func MarshalXML(v interface{}, s network.Stream) {
