@@ -13,7 +13,7 @@ type Action struct {
  	PearID   peer.ID `xml:"Root>Peer"`
 }
 
-type FunctionConfig struct {
+type EndpointConfig struct {
 	Name         string                 `yaml:"name"`
 	SharedObject string                 `yaml:"shared_object"`
 	Entrypoint   string                 `yaml:"entrypoint"`
