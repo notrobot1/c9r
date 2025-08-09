@@ -13,6 +13,14 @@ type Action struct {
  	PearID   peer.ID `xml:"Root>Peer"`
 }
 
+type FunctionConfig struct {
+	Name         string                 `yaml:"name"`
+	SharedObject string                 `yaml:"shared_object"`
+	Entrypoint   string                 `yaml:"entrypoint"`
+	Extra        map[string]interface{} `yaml:",inline"` // all other fields will be included here
+}
+
+
 func MarshalXML(v interface{}, s network.Stream) {
 	xmlData, err := xml.MarshalIndent(v, "", "  ")
 	if err != nil {
